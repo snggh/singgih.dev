@@ -3,6 +3,15 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 module.exports = withBundleAnalyzer({
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.scdn.co',
+        pathname: '/image/**',
+      },
+    ],
+  },
   reactStrictMode: false,
   eslint: {
     ignoreDuringBuilds: true,
